@@ -9,10 +9,10 @@
 </div>
 
 <ng-template #showLogin>
-    <div class="auth-page" fxLayout="row" fxLayoutAlign="center none">
+    <div class="auth-page">
         <div fxFlexLayout="column" class="auth-card">
-            <div fxFlex fxLayout="column" fxLayoutAlign="center none" class="actual-form">
-                <div class="tiny-logo" fxLayoutAlign="center">
+            <div fxFlex fxLayout="column" class="actual-form" fxLayoutGap="2 ">
+                <div class="tiny-logo" fxLayout="row">
                     <img style="max-width: 100px;" src="assets/images/elewa-logo.png/" />
                     <div fxLayout="row" fxLayoutAlign="end center">
                         <mat-select id="lang-selector" [(ngModel)]="lang" style="margin-left:30px;" data-intercom-tooltip="Language selector" fxFlex="7-" 
@@ -30,7 +30,7 @@
                     </div>
                 </div>
 
-                <div class="form " fxLayout="row " fxLayoutGap="2 " fxLayoutAlign="center center ">
+                <div>
 
                     <span *ngIf="isLogin "> 
                        <app-login></app-login>
