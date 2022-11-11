@@ -17,7 +17,7 @@ $secondary-elements-color: white;
 
 .auth-card {
     max-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     border-radius: 8px;
     background: $secondary-elements-color;
     // box-shadow: 0px 3px 6px #70739D0B;
@@ -70,6 +70,8 @@ $secondary-elements-color: white;
 }
 
 .actual-form {
+    max-width: 50vw;
+    padding: 1em 10em;
     @media screen and (max-width: 768px) {
         max-width: 100% !important;
     }
@@ -111,3 +113,8 @@ button {
     font-weight: 6;
     line-height: 2;
 }
+
+/* .form-body {
+    align-self: center;
+    width: 80%;
+} */
