@@ -50,17 +50,17 @@ $secondary-elements-color: white;
 
 .button-area {
     background-color: $secondary-elements-color;
-    text-align: center;
-    align-self: center;
-    width: 40%;
+  //  text-align: center;
+  //  align-self: center;
     cursor: pointer;
-    @media screen and (max-width: 768px) {
-        border-bottom-right-radius: 8px;
-        max-width: 100%;
-    }
-    @media screen and (max-width: 320px) {
-        border-bottom-right-radius: 8px;
-    }
+}
+
+.button-area button {
+    display: block;
+    width: 100%;
+    font-weight: 700;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 
 .bottom-content {
@@ -88,7 +88,7 @@ $secondary-elements-color: white;
 
 button {
     background-color: $secondary-elements-color;
-    width: 50%;
+    //width: 50%;
     border: none;
     // border-bottom: 3px solid rgba(255, 194, 0);
     border-bottom-left-radius: 4px;
@@ -97,9 +97,14 @@ button {
     font-weight: 5;
 }
 
-.login-button {
-    border-bottom: 3px solid $primary-color;
-    border-width: 50%;
+.selected-button {
+    border-bottom: 2px solid var(--convs-mgr-color-primary-yellow);
+    color: var(--convs-mgr-color-text-black);
+}
+
+.not-selected-button {
+    border-bottom: 1px solid var(--convs-mgr-color-nav-inactive);
+    color: var(--convs-mgr-color-text-inactive-bolder);
 }
 
 .title {
