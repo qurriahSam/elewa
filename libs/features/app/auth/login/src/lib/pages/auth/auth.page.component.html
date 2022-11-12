@@ -23,11 +23,9 @@
                     </div>
                 </div>
 
-                <div class="button-area">
-                    <div mat-raised-button fxLayout=" row " fxLayoutAlign="space-evenly none ">
-                        <button (click)="toggleModeLogin()" [ngClass]="isLogin ? 'login-button' : ''">{{'LOGIN.LOGIN'| transloco}}</button>
-                        <button (click)="toggleMode() " [ngClass]="!isLogin ? 'login-button' : ''">{{'LOGIN.CREATE-ACCOUNT'| transloco}}</button>
-                    </div>
+                <div class="button-area" fxLayout="row">
+                        <button (click)="toggleModeLogin()" [ngClass]="isLogin ? 'selected-button' : 'not-selected-button'">{{'LOGIN.LOGIN'| transloco}}</button>
+                        <button (click)="toggleMode() " [ngClass]="!isLogin ? 'selected-button' : 'not-selected-button'">{{'LOGIN.CREATE-ACCOUNT'| transloco}}</button>
                 </div>
 
                 <div>
