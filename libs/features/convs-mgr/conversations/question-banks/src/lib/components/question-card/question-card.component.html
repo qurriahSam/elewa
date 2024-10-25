@@ -2,6 +2,14 @@
   <div>
     <mat-card-header>
       <div class="header__wrapper">
+        <div class="mini-btns">
+          <button class="__actionBtn" (click)="editQuestion()">
+            <img src="assets/icons/edit-item.svg" alt="">
+          </button>
+          <button class="__actionBtn" (click)="deleteQuestion()">
+            <img src="assets/icons/delete-item.svg" alt="">
+          </button>
+        </div>
         <div class="question-header">
           <div appearance="fill" fxFlex="60" *ngIf="mediaPath" class="media-display" [ngClass]="mediaAlign?.value">
             <div class="media-div">
@@ -10,16 +18,8 @@
             </div>
           </div>
           <div class="question-text">
-            <p> {{ questionFormGroup.get('message')?.value }}</p>
+            <span> {{ questionFormGroup.get('message')?.value }}</span>
           </div>
-        </div>
-        <div class="mini-btns">
-          <button class="__actionBtn" (click)="editQuestion()">
-            <img src="assets/icons/edit-item.svg" alt="">
-          </button>
-          <button class="__actionBtn" (click)="deleteQuestion()">
-            <img src="assets/icons/delete-item.svg" alt="">
-          </button>
         </div>
       </div>
     </mat-card-header>
