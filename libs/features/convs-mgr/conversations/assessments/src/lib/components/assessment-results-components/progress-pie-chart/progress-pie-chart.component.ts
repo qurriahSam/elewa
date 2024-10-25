@@ -44,7 +44,7 @@ export class ProgressPieChartComponent implements OnInit, AfterViewInit,OnDestro
     return new Chart(this.progressPieChart.nativeElement, {
       type: 'doughnut',
       data: {
-        labels: ['Done', 'In progress'],
+        labels: ['Done', 'In progress', 'Not started'],
         datasets: [
           {
             data: [data.done, data.inProgress, data.notStarted || 0],
