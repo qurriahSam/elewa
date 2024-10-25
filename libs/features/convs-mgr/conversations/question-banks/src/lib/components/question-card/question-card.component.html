@@ -1,17 +1,17 @@
 <div class="question-card" *ngIf="questionFormGroup && !addAQuestion">
   <div>
-    <mat-card-header>
+    <div>
       <div class="header__wrapper">
-        <div class="mini-btns">
-          <button class="__actionBtn" (click)="editQuestion()">
-            <img src="assets/icons/edit-item.svg" alt="">
-          </button>
-          <button class="__actionBtn" (click)="deleteQuestion()">
-            <img src="assets/icons/delete-item.svg" alt="">
-          </button>
-        </div>
-        <div class="question-header">
-          <div appearance="fill" fxFlex="60" *ngIf="mediaPath" class="media-display" [ngClass]="mediaAlign?.value">
+        <div class="question-header" [class.header_without_media]="!mediaPath?.value || !mediaType?.value">
+          <div class="mini-btns">
+            <button class="__actionBtn" (click)="editQuestion()">
+              <img src="assets/icons/edit-item.svg" alt="">
+            </button>
+            <button class="__actionBtn" (click)="deleteQuestion()">
+              <img src="assets/icons/delete-item.svg" alt="">
+            </button>
+          </div>
+          <div appearance="fill" *ngIf="mediaPath" class="media-display" [ngClass]="mediaAlign?.value">
             <div class="media-div">
               <img *ngIf="mediaType?.value === 'image'"  [src]="mediaPath?.value" alt="Uploaded Image" class="uploaded-media" >
               <video *ngIf="mediaType?.value  === 'video'" #videoPlayer controls [src]="mediaPath?.value" class="uploaded-media"></video>
@@ -22,7 +22,7 @@
           </div>
         </div>
       </div>
-    </mat-card-header>
+    </div>
     <mat-card-content class="question-content">
       <div class="question-feedback" *ngFor="let option of questionFormGroup.get('options')?.value">
         <div class="option-details">
