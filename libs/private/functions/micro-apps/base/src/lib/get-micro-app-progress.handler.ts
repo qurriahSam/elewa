@@ -23,11 +23,11 @@ export class UpdateMicroAppProgressHandler extends FunctionHandler<MicroAppProgr
         const assessmentProgressSrv = new AssessmentProgressService(tools);
         return assessmentProgressSrv.trackProgress(req);
       } else {
-        tools.Logger.log(() => `[UpdateMicroAppProgressHandler].execute - Progress tracking for micro app type - ${JSON.stringify(req.type)} - not configured `);
+        tools.Logger.log(() => `[UpdateMicroAppProgressHandler].execute - Progress tracking for micro app type - ${req.type} - not configured `);
         return { status: 200 } as RestResult;
       }
     } catch (error) {
-      tools.Logger.error(() => `[UpdateMicroAppProgressHandler].execute - Encountered error :: ${JSON.stringify(error)}`);
+      tools.Logger.error(() => `[UpdateMicroAppProgressHandler].execute - Encountered error :: ${error}`);
       return { success: false, error: JSON.stringify(error) };
     }
   }
