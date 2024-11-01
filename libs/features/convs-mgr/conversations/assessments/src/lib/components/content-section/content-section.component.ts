@@ -1,7 +1,7 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
-import { combineLatest, map, take } from 'rxjs';
+import { combineLatest, concatMap, map, of, take } from 'rxjs';
 import { SubSink } from 'subsink';
 
 import { Assessment, AssessmentOptionValue, AssessmentQuestion } from '@app/model/convs-mgr/conversations/assessments';
@@ -222,7 +222,8 @@ export class ContentSectionComponent implements OnInit, OnDestroy
   
    private subscribeToProgress (milestones: MicroAppProgress)
   {
-    this._microAppService.progressCallBack(this.app, milestones)?.pipe(take(1)).subscribe((updatedProgress) => {
+    // Use concatMap to allow the observables to finish and maintain the order of progress
+    this._microAppService.progressCallBack(this.app, milestones)?.pipe(concatMap((progress)=> of(progress))).subscribe((updatedProgress) => {
       if (updatedProgress) {
         this.assessmentProgress = updatedProgress.result as AssessmentProgress;
         const currentAttempt = this.assessmentProgress.attempts[this.assessmentProgress.attemptCount];
