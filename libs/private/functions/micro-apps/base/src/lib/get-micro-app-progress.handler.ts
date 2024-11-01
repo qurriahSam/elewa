@@ -28,7 +28,7 @@ export class UpdateMicroAppProgressHandler extends FunctionHandler<MicroAppProgr
       }
     } catch (error) {
       tools.Logger.error(() => `[UpdateMicroAppProgressHandler].execute - Encountered error :: ${error}`);
-      return { success: false, error: JSON.stringify(error) };
+      return { success: false, error: error };
     }
   }
 }
