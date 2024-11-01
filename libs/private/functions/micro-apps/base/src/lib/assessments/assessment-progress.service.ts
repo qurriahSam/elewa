@@ -173,9 +173,9 @@ export class AssessmentProgressService
       currentAttempt.finalScorePercentage = percentageScore;
 
       if(progress.attemptCount === 1) {
-        progress.highestScore = currentAttempt.finalScorePercentage;
+        progress.highestScore = currentAttempt.finalScorePercentage || 0;
       } else {
-        progress.highestScore = getHighestPercentageScore(progress.attempts);
+        progress.highestScore = getHighestPercentageScore(progress.attempts) || 0;
       }
     } else {
       currentAttempt.outcome = AssessmentStatusTypes.Incomplete;
